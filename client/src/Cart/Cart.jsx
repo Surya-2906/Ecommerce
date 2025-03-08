@@ -11,7 +11,7 @@ export default function Cart() {
         fetchCartProducts()
     }, [])
     async function fetchCartProducts() {
-        await axios.get("http://localhost:5000/api/cart", {
+        await axios.get("https://ecommerce-rimx.onrender.com/api/cart", {
             headers: { Authorization: `Bearer ${user.token}` }
         })
             .then((res) => {
@@ -28,7 +28,7 @@ export default function Cart() {
     }
     async function removeFromCart(productId){
         try{
-            await axios.delete(`http://localhost:5000/api/cart/remove/${productId}`,{
+            await axios.delete(`https://ecommerce-rimx.onrender.com/api/cart/remove/${productId}`,{
                 headers:{Authorization:`Bearer ${user.token}`}
             })
             .then((res)=>{
